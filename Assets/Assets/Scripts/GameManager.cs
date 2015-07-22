@@ -6,7 +6,7 @@ public class GameManager : MonoBehaviour {
 	public GameObject active;
 	public Transform actors;
 	private BoardManager boardscript;
-	public Component actorscript;
+	public Actor actorscript;
 	public GameObject whatisthis;
 	//private GameObject[] Actors;
 	// Use this for initialization
@@ -36,8 +36,9 @@ public class GameManager : MonoBehaviour {
 
 		foreach (Transform child in actors.transform)
 		{
-			actorscript = child.gameObject.GetComponent<Actor>();
-			//Debug.Log (actorscript.Energy);
+			actorscript = child.gameObject.GetComponent<Actor>(); //Grab reference to Actor script through transform
+			actorscript.energy = actorscript.energy + 100;
+			actorscript.Act();
 
 		}
 	}

@@ -57,7 +57,7 @@ public class Actor : MonoBehaviour {
 		transform.position = destination;
 	}
 
-	protected virtual void Act ()
+	public virtual void Act ()
 	{
 		Vector2 start = transform.position;
 		if (energy >= 100) 

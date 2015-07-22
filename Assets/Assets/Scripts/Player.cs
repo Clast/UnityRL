@@ -21,7 +21,7 @@ public class Player : Actor
 
 	 }
 
-	protected override void Act()
+	public override void Act()
 	{
 		while (playersturn == true)
 		{
