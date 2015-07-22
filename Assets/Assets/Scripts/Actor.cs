@@ -60,9 +60,8 @@ public class Actor : MonoBehaviour {
 	public virtual void Act ()
 	{
 		Vector2 start = transform.position;
-			Debug.Log ("Energy enough to move");
-			int x = Random.Range(-2,2);
-			int y = Random.Range(-2,2);
+			int x = Random.Range(-1,2);
+			int y = Random.Range(-1,2);
 			Move(x,y);
 			Debug.Log ("Moving" + x + y);
 
