@@ -6,9 +6,10 @@ public class GameManager : MonoBehaviour {
 	public GameObject active;
 	public Transform actors;
 	private BoardManager boardscript;
-	public Actor actorscript;
-	public GameObject whatisthis;
-	//private GameObject[] Actors;
+	private Actor actorscript;
+	public bool enemiesturn, playersturn;
+
+
 	// Use this for initialization
 	void Start () {
 		boardscript = GetComponent <BoardManager>();
@@ -19,28 +20,32 @@ public class GameManager : MonoBehaviour {
 	// Update is called once per frame
 	void Update () 
 	{
-		GameLoop();
-
+		if (playersturn || enemiesturn) return; 
+		MoveEnemies ();
 	}
 
 	public void SetActive() //This needs to be called after the setup is done on the board BY the board object.
 	{
 		active = GameObject.FindWithTag ("Active Level");
 		actors = active.transform.Find ("Actors");
+		//GameLoop ();
 
 	}
 
-	private void GameLoop()
+	private void MoveEnemies()
 	{
-
-
-		foreach (Transform child in actors.transform)
-		{
-			actorscript = child.gameObject.GetComponent<Actor>(); //Grab reference to Actor script through transform
-			actorscript.energy = actorscript.energy + 100;
-			actorscript.Act();
-
+			enemiesturn = true;
+			foreach (Transform child in actors.transform) 
+			{
+				actorscript = child.gameObject.GetComponent<Actor> (); //Grab reference to Actor script through transform
+				actorscript.Act ();
+				
+			}
+			enemiesturn = false;
+		playersturn = true;
 		}
-	}
+
+
+
 }
 

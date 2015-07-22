@@ -60,12 +60,12 @@ public class Actor : MonoBehaviour {
 	public virtual void Act ()
 	{
 		Vector2 start = transform.position;
-		if (energy >= 100) 
-		{
-			int x = Random.Range(0,1);
-			int y = Random.Range(0,1);
+			Debug.Log ("Energy enough to move");
+			int x = Random.Range(-2,2);
+			int y = Random.Range(-2,2);
 			Move(x,y);
-		}
+			Debug.Log ("Moving" + x + y);
+
 	}
 
 	public void Tick ()

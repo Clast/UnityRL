@@ -68,7 +68,7 @@ public class BoardManager : MonoBehaviour {
 			GameObject instance = Instantiate (actor, actor.transform.position, Quaternion.identity) as GameObject;
 			if (instance.CompareTag ("Player")) {
 				MainCamera.transform.parent = instance.transform;
-				instance.transform.parent = actorHolder.transform;
+				instance.transform.parent = boardHolder.transform;
 			} else {
 				instance.transform.parent = actorHolder.transform;
 			}
@@ -78,6 +78,7 @@ public class BoardManager : MonoBehaviour {
 
 		void Finish()
 		{
+		Debug.Log ("Calling Finish");
 			GameObject Controller = GameObject.FindWithTag ("GameController");
 			var ControllerScript = Controller.GetComponent<GameManager> ();
 			ControllerScript.SetActive ();
