@@ -1,5 +1,4 @@
 ﻿using UnityEngine;
-using UnityEngine;
 using System.Collections;
 
 public class Actor : MonoBehaviour {
@@ -7,9 +6,10 @@ public class Actor : MonoBehaviour {
 	public LayerMask Blocklayer;
 	private BoxCollider2D boxCollider;
 	private Rigidbody2D rgdBody;
-	public int energy = 10;
 	public int speed= 100;
 	RaycastHit2D hit;
+	public int health = 100;
+	public int attack = 50;
 
 
 	// Use this for initialization
@@ -24,7 +24,6 @@ public class Actor : MonoBehaviour {
 	{
 		boxCollider = GetComponent <BoxCollider2D> (); 
 		rgdBody = GetComponent <Rigidbody2D> ();
-		energy = 100;
 		speed = 10;
 		Blocklayer = 1 << 8;
 
@@ -41,11 +40,8 @@ public class Actor : MonoBehaviour {
 		
 		Vector2 start = transform.position; 
 		Vector2 end = start + new Vector2 (xDir, yDir);
-
 		boxCollider.enabled = false;
-
 		hit = Physics2D.Linecast (start, end, Blocklayer); // hit will store whatever (if anything) is hit on the blocking layer
-
 		boxCollider.enabled = true;
 
 		if (hit.transform == null) 
@@ -55,7 +51,7 @@ public class Actor : MonoBehaviour {
 			
 		} 
 
-		Debug.Log ("Hit something" + hit.GetType ());
+		//Debug.Log ("Hit something" + hit.GetType ());
 		return false;
 		
 	}
@@ -71,7 +67,6 @@ public class Actor : MonoBehaviour {
 	{
 			int x = 0;
 			int y = 0;
-			Vector2 start = transform.position;
 			bool done = false;
 
 			while (done == false) 
@@ -80,19 +75,15 @@ public class Actor : MonoBehaviour {
 			y = Random.Range (-1, 2);
 			if (canMove (x, y, out hit)) //Prevent monster from walking into player space
 			{
-				Move (x, y);
+				//Move (x, y);
 				done = true;
 			}
 
 			
 		}
-			//Debug.Log ("Moving" + x + y);
+
 
 	}
 
-	public void Tick ()
-	{
-		energy = energy + speed;
-		//Debug.Log (energy);
-	}
+
 }

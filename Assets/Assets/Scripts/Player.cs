@@ -4,7 +4,7 @@ using System.Collections;
 public class Player : Actor 
 {
 	RaycastHit2D hit;
-	bool playersturn = false;
+//	bool playersturn = false;
 	bool canmove = false;
 	private GameObject Manager;
 	private GameManager ManagerScript;
@@ -32,6 +32,7 @@ public class Player : Actor
 				Move(0,1);
 				ManagerScript.playersturn = false;
 			}
+			Debug.Log (hit.rigidbody);
 		}
 		if (Input.GetButtonDown("Down"))//Down
 		{
