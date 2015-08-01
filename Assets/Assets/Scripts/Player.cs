@@ -11,7 +11,7 @@ public class Player : Actor
 	// Use this for initialization
 	protected override void Start () 
 	{
-		base.Start();
+		base.Awake();
 		Manager = GameObject.FindWithTag ("GameController");
 		ManagerScript = Manager.GetComponent<GameManager> ();
 	}

@@ -1,7 +1,7 @@
 Microsoft Visual Studio Solution File, Format Version 11.00
 # Visual Studio 2008
 
-Project("{B66508EC-F578-1E1D-C1DE-951F78AA58AF}") = "UnityRL", "Assembly-CSharp-vs.csproj", "{740D0593-9D52-F0AC-250D-BC9E4A9C0F51}"
+Project("{B66508EC-F578-1E1D-C1DE-951F78AA58AF}") = "UnityRL", "Assembly-CSharp.csproj", "{740D0593-9D52-F0AC-250D-BC9E4A9C0F51}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -17,9 +17,12 @@ Global
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
-						GlobalSection(MonoDevelopProperties) = preSolution
+								GlobalSection(MonoDevelopProperties) = preSolution
 =======
 								GlobalSection(MonoDevelopProperties) = preSolution
+>>>>>>> destination
+=======
+										GlobalSection(MonoDevelopProperties) = preSolution
 >>>>>>> destination
 		StartupItem = Assembly-CSharp.csproj
 		Policies = $0
