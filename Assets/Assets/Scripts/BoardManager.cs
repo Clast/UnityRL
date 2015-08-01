@@ -78,7 +78,7 @@ public class BoardManager : MonoBehaviour {
 
 		void Finish()
 		{
-		Debug.Log ("Calling Finish");
+		//Debug.Log ("Calling Finish");
 			GameObject Controller = GameObject.FindWithTag ("GameController");
 			var ControllerScript = Controller.GetComponent<GameManager> ();
 			ControllerScript.SetActive ();

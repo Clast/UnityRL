@@ -6,7 +6,7 @@ public class Actor : MonoBehaviour {
 
 	public LayerMask Blocklayer;
 	private BoxCollider2D boxCollider;
-	//private Rigidbody2D rgdBody;
+	private Rigidbody2D rgdBody;
 	public int energy = 10;
 	public int speed= 100;
 
@@ -15,10 +15,10 @@ public class Actor : MonoBehaviour {
 	protected virtual void Start () 
 	{
 		boxCollider = GetComponent <BoxCollider2D> (); 
-		//rgdBody = GetComponent <Rigidbody2D> ();
+		rgdBody = GetComponent <Rigidbody2D> ();
 		energy = 100;
 		speed = 10;
-
+		Blocklayer = 1 << 8;
 
 
 	}
@@ -70,6 +70,6 @@ public class Actor : MonoBehaviour {
 	public void Tick ()
 	{
 		energy = energy + speed;
-		Debug.Log (energy);
+		//Debug.Log (energy);
 	}
 }
