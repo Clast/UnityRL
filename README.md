@@ -1,3 +1,8 @@
-* 1) Download Sourcetree, it's way easier than Tortoise HG. Integrates with Bitbucket.
-* 2)File>Clone New>Select UnityRL in the source and choose a destination folder.
-* 3)Open it in Unity.
+Rogulike framework written in Unity
+
+Current Features:
+Blank Map Generation
+Turn System
+Scrolling Camera
+Collision events/detection
+Basic Monster AI (state machine with "random move" behavior programmed in by default)
