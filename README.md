@@ -1,4 +1,4 @@
-Rogulike framework written in Unity
+Roguelike framework written in Unity
 
 Current Features:
 
